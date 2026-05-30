@@ -120,7 +120,7 @@ with col1:
     st.progress(min(100, int(drought_penalty * 2)), text=f"💧 Kümülatif Kuraklık Hasarı: {int(drought_penalty)} Pts")
     st.progress(min(100, int(light_penalty * 2)), text=f"☀️ Işık/Fotosentez Dengesi: {int(light_penalty)} Pts")
     
-   st.write("---")
+    st.write("---")
     st.write("### 💼 KURUMSAL DEĞER ÖNERİSİ & VİZYON")
     st.success(
         """• **EcoGrow**, endüstriyel tarım tesislerinin, akıllı sera üreticilerinin ve sürdürülebilirlik raporlamasına değer veren gıda holdinglerinin verilerini canlı bir veri sanatı platformuna dönüştürür.
