@@ -132,11 +132,11 @@ with col1:
     st.success(
         """• **EcoGrow:** Endüstriyel seralar ve gıda holdingleri için karmaşık tarım verilerini lobi ve ofislerde sergilenebilecek canlı bir veri sanatına dönüştürür[cite: 5, 19, 20].
 
-• **Kurumsal Prestij:** Şirketlerin çevre dostu ve sürdürülebilirlik vizyonlarını herkesin anlayacağı estetik bir sanat diliyle kanıtlar[cite: 5, 19, 20].
+• **Kurumsal Prestij:** Şirketlerin çevre dostu ve sürdürülebilirlik vizyonlarını herkesin anlayacağı estetik bir sanat diliyle kanıtlar.
 
-• **PR & Şeffaflık:** Yeşil dönüşüm başarılarını yatırımcılara ve dış ziyaretçilere ruhsuz tablolar yerine büyüleyici bir dijital tuvalle sunar[cite: 3, 4, 5].
+• **PR & Şeffaflık:** Yeşil dönüşüm başarılarını yatırımcılara ve dış ziyaretçilere ruhsuz tablolar yerine büyüleyici bir dijital tuvalle sunar.
 
-• **Kaynak Optimizasyonu:** Ön plandaki bu estetik prestijin arkasında, tarla verimini artıran ve kaynakları optimize eden hassas bir analiz motoru çalışır[cite: 20, 21]."""
+• **Kaynak Optimizasyonu:** Ön plandaki bu estetik prestijin arkasında, tarla verimini artıran ve kaynakları optimize eden hassas bir analiz motoru çalışır."""
     )
 
 # TUVALİ SAĞ SÜTUNA ÇİZEN BLOK
