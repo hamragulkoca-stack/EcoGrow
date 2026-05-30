@@ -121,11 +121,13 @@ with col1:
     st.progress(min(100, int(light_penalty * 2)), text=f"☀️ Işık/Fotosentez Dengesi: {int(light_penalty)} Pts")
     
     st.write("---")
-    st.write("### 💼 KURUMSAL DEĞER ÖNERİSİ & VİZYON")
+    st.write("### 💼 KURUMSAL VİZYON VE DEĞER ÖNERİSİ")
     st.success(
-        """• **EcoGrow**, endüstriyel tarım tesislerinin, akıllı sera üreticilerinin ve sürdürülebilirlik raporlamasına değer veren gıda holdinglerinin verilerini canlı bir veri sanatı platformuna dönüştürür.
+        """• **EcoGrow:** Endüstriyel seralar ve gıda holdingleri için karmaşık tarım verilerini lobi ve ofislerde sergilenebilecek canlı bir veri sanatına dönüştürür[cite: 5, 19, 20].
 
-• **Kurumsal Prestij:** Şirketler, lobilerindeki standart ve ruhsuz veri ekranları yerine bu dijital tuvali ofislerinde sergileyerek çevre dostu tarım vizyonlarını herkesin anlayacağı bir sanat diliyle kanıtlar.
-• **PR & Şeffaflık:** Yeşil dönüşüm ve sürdürülebilirlik (ESG) başarıları, yatırımcılara ve dış ziyaretçilere soyut, büyüleyici ve estetik bir veri paneliyle sunulur.
-• **Kaynak Optimizasyonu:** Ön plandaki bu sanatsal estetiğin arkasında çalışan hassas analiz motoru, arka planda tarla verimini artırmayı ve kaynak optimizasyonunu desteklemeyi hedefler."""
+• **Kurumsal Prestij:** Şirketlerin çevre dostu ve sürdürülebilirlik (ESG) vizyonlarını herkesin anlayacağı estetik bir sanat diliyle kanıtlar[cite: 5, 19, 20].
+
+• **PR & Şeffaflık:** Yeşil dönüşüm başarılarını yatırımcılara ve dış ziyaretçilere ruhsuz tablolar yerine büyüleyici bir dijital tuvalle sunar[cite: 3, 4, 5].
+
+• **Kaynak Optimizasyonu:** Ön plandaki bu estetik prestijin arkasında, tarla verimini artıran ve kaynakları optimize eden hassas bir analiz motoru çalışır[cite: 20, 21]."""
     )
