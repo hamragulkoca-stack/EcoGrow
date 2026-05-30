@@ -120,16 +120,12 @@ with col1:
     st.progress(min(100, int(drought_penalty * 2)), text=f"💧 Kümülatif Kuraklık Hasarı: {int(drought_penalty)} Pts")
     st.progress(min(100, int(light_penalty * 2)), text=f"☀️ Işık/Fotosentez Dengesi: {int(light_penalty)} Pts")
     
-    st.write("---")
-    st.write("### 💼 KURUMSAL DEĞER ÖNERİSİ (B2B SaaS)")
+   st.write("---")
+    st.write("### 💼 KURUMSAL DEĞER ÖNERİSİ & VİZYON")
     st.success(
-        """• **EcoGrow**, endüstriyel tarım tesislerinin ve gıda holdinglerinin sürdürülebilirlik (ESG) verilerini canlı, yaşayan birer kurumsal sanat tablosuna dönüştürür.
+        """• **EcoGrow**, endüstriyel tarım tesislerinin, akıllı sera üreticilerinin ve sürdürülebilirlik raporlamasına değer veren gıda holdinglerinin verilerini canlı bir veri sanatı platformuna dönüştürür.
 
-• **SaaS Modeli:** Şirket lobilerindeki ruhsuz ekranlar yerine abonelik modeliyle (Data-Art-as-a-Service) kiralanır.
-• **PR & Şeffaflık:** Şirketler yeşil dönüşüm başarılarını yatırımcılarına ve ziyaretçilerine soyut, büyüleyici bir sanat diliyle kanıtlar."""
+• **Kurumsal Prestij:** Şirketler, lobilerindeki standart ve ruhsuz veri ekranları yerine bu dijital tuvali ofislerinde sergileyerek çevre dostu tarım vizyonlarını herkesin anlayacağı bir sanat diliyle kanıtlar.
+• **PR & Şeffaflık:** Yeşil dönüşüm ve sürdürülebilirlik (ESG) başarıları, yatırımcılara ve dış ziyaretçilere soyut, büyüleyici ve estetik bir veri paneliyle sunulur.
+• **Kaynak Optimizasyonu:** Ön plandaki bu sanatsal estetiğin arkasında çalışan hassas analiz motoru, arka planda tarla verimini artırmayı ve kaynak optimizasyonunu desteklemeyi hedefler."""
     )
-
-with col2:
-    st.subheader("🎨 Dijital Tuval (Verinin Sanata Dönüşümü)")
-    st.pyplot(fig)
-    plt.close(fig) # Bellek sızıntısını önlemek için figürü kapatıyoruz
