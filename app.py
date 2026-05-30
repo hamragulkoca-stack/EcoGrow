@@ -69,18 +69,18 @@ y = r * np.sin(t)
 
 # Sanat Akımı ve Renk Paleti Belirleme
 if system_health >= 75:
-    art_style = "Claude Monet (İzlenimcilik Modu)" [cite: 8]
-    cmap_choice = "YlGnBu"  # Pastel yeşiller, su mavileri [cite: 8]
+    art_style = "Claude Monet (İzlenimcilik Modu)" 
+    cmap_choice = "YlGnBu"  # Pastel yeşiller, su mavileri 
     line_alpha = 0.6        
     stroke_len_mod = 1.2    
 elif 45 <= system_health < 75:
-    art_style = "Paul Klee (Modern Soyutlama Modu)" [cite: 10]
-    cmap_choice = "viridis" # Kontrollü ritim tonları [cite: 10]
+    art_style = "Paul Klee (Modern Soyutlama Modu)" 
+    cmap_choice = "viridis" # Kontrollü ritim tonları 
     line_alpha = 0.7
     stroke_len_mod = 1.6
 else:
-    art_style = "Vincent van Gogh (Dışavurumculuk Modu)" [cite: 12]
-    cmap_choice = "hot"     # Kor kırmızısı, çiyan sarısı [cite: 13]
+    art_style = "Vincent van Gogh (Dışavurumculuk Modu)" 
+    cmap_choice = "hot"     # Kor kırmızısı, çiyan sarısı 
     line_alpha = 0.9        
     stroke_len_mod = 3.0    
 
@@ -132,15 +132,15 @@ with col1:
     st.success(
         """• **EcoGrow:** Endüstriyel seralar ve gıda holdingleri için karmaşık tarım verilerini lobi ve ofislerde sergilenebilecek canlı bir veri sanatına dönüştürür[cite: 5, 19, 20].
 
-• **Kurumsal Prestij:** Şirketlerin çevre dostu ve sürdürülebilirlik (ESG) vizyonlarını herkesin anlayacağı estetik bir sanat diliyle kanıtlar[cite: 5, 19, 20].
+• **Kurumsal Prestij:** Şirketlerin çevre dostu ve sürdürülebilirlik vizyonlarını herkesin anlayacağı estetik bir sanat diliyle kanıtlar[cite: 5, 19, 20].
 
 • **PR & Şeffaflık:** Yeşil dönüşüm başarılarını yatırımcılara ve dış ziyaretçilere ruhsuz tablolar yerine büyüleyici bir dijital tuvalle sunar[cite: 3, 4, 5].
 
 • **Kaynak Optimizasyonu:** Ön plandaki bu estetik prestijin arkasında, tarla verimini artıran ve kaynakları optimize eden hassas bir analiz motoru çalışır[cite: 20, 21]."""
     )
 
-# İŞTE BURASI EKSİKTİ - TUVALİ SAĞ SÜTUNA ÇİZEN BLOK
+# TUVALİ SAĞ SÜTUNA ÇİZEN BLOK
 with col2:
-    st.subheader("🎨 Dijital Tuval (Verinin Sanata Dönüşümü)") [cite: 5, 20]
+    st.subheader("🎨 Dijital Tuval (Verinin Sanata Dönüşümü)") 
     st.pyplot(fig)
     plt.close(fig)
