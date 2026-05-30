@@ -138,7 +138,17 @@ with col1:
 
 • **Kaynak Optimizasyonu:** Ön plandaki bu estetik prestijin arkasında, tarla verimini artıran ve kaynakları optimize eden hassas bir analiz motoru çalışır."""
     )
+    st.write("---")
+    st.write("### 📜 FELSEFİ ALTYAPI & TEMATİK BAĞLAM")
+    st.info(
+        """EcoGrow, yapay zekayı ve tarımsal veriyi sadece teknik bir vizyonla değil, insanlığın en temel üç temasıyla harmanlar:
 
+• ❤️ **AŞK (Claude Monet):** Sensörler ideal değerlerdeyken ortaya çıkan yumuşak fırça darbeleri, insanın doğaya, toprağa ve üretime duyduğu o saf aşkı ve uyumu simgeler.
+
+• 💀 **ÖLÜM (Vincent van Gogh):** Kuraklık, yüksek sıcaklık ve kriz anlarında devreye giren agresif girdaplar ve kor renkler; tarlanın, bitkinin ve ekosistemin dijital çığlığını, yani kaçınılmaz ölümü temsil eder.
+
+• 🇹🇷 **VATAN (Kurumsal Sürdürülebilirlik):** Tüm bu sanatsal ve matematiksel döngü, üzerinde yaşadığımız ve beslendiğimiz toprağı, yani vatanı koruma, kaynakları optimize etme ve geleceğe sürdürülebilir bir yurt bırakma felsefesine dayanır."""
+    )
 # TUVALİ SAĞ SÜTUNA ÇİZEN BLOK
 with col2:
     st.subheader("🎨 Dijital Tuval (Verinin Sanata Dönüşümü)") 
