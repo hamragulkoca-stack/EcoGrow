@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.collections import LineCollection
 
 # --- SAYFA YAPISI ---
 st.set_page_config(page_title="EcoGrow: Art of ESG", layout="wide")
@@ -55,8 +56,8 @@ else:
 system_health = max(0, min(100, int(100 - (total_instant_penalty + st.session_state.prior_damage))))
 
 # --- 🎨 ALGORİTMİK İZLENİMCİLİK MOTORU (Sanat Akımları) ---
-num_strokes = 8000  # Fırça darbesi sayısı artırıldı (Görseli doldurmak için)
-t = np.linspace(0, 16 * np.pi, num_strokes) # Spiral genişletildi
+num_strokes = 6000  # Akıcı ve yoğun bir görsellik için optimize edildi
+t = np.linspace(0, 16 * np.pi, num_strokes)
 
 # Sistem sağlığına göre geometrik kaos katsayısı
 kaos_factor = (100 - system_health) / 12
@@ -68,20 +69,20 @@ y = r * np.sin(t)
 
 # Sanat Akımı ve Renk Paleti Belirleme
 if system_health >= 75:
-    art_style = "Claude Monet (İzlenimcilik Modu)"
-    cmap_choice = "YlGnBu"  # Pastel yeşiller, su mavileri
-    line_alpha = 0.6        # Opaklık biraz artırıldı
+    art_style = "Claude Monet (İzlenimcilik Modu)" [cite: 8]
+    cmap_choice = "YlGnBu"  # Pastel yeşiller, su mavileri [cite: 8]
+    line_alpha = 0.6        
     stroke_len_mod = 1.2    
 elif 45 <= system_health < 75:
-    art_style = "Paul Klee (Modern Soyutlama Modu)"
-    cmap_choice = "viridis" 
+    art_style = "Paul Klee (Modern Soyutlama Modu)" [cite: 10]
+    cmap_choice = "viridis" # Kontrollü ritim tonları [cite: 10]
     line_alpha = 0.7
     stroke_len_mod = 1.6
 else:
-    art_style = "Vincent van Gogh (Dışavurumculuk Modu)"
-    cmap_choice = "hot"     # Kor kırmızısı, çiyan sarısı
-    line_alpha = 0.9        # Ağır, kalın boya hissi için yüksek opaklık
-    stroke_len_mod = 3.0    # Daha uzun ve agresif fırça darbeleri
+    art_style = "Vincent van Gogh (Dışavurumculuk Modu)" [cite: 12]
+    cmap_choice = "hot"     # Kor kırmızısı, çiyan sarısı [cite: 13]
+    line_alpha = 0.9        
+    stroke_len_mod = 3.0    
 
 # Tuvali Oluşturma (Yağlı Boya Efekti)
 fig, ax = plt.subplots(figsize=(10, 8), facecolor='black')
@@ -90,20 +91,26 @@ ax.set_facecolor('black')
 colors = plt.get_cmap(cmap_choice)(np.linspace(0, 1, num_strokes))
 angles = np.arctan2(y, x) + (np.pi / 2 if system_health < 45 else 0) 
 
-# range(0, num_strokes, 1) yaparak TÜM fırça darbelerini yoğun şekilde çiziyoruz
-for i in range(0, num_strokes, 1):  
-    # Her sensör verisi için minik bir fırça darbesi vektörü hesapla
+# Performans için LineCollection yapısına geçildi (Hızlı Çizim Sağlar)
+segments = []
+line_colors = []
+alphas = []
+
+for i in range(num_strokes):  
     dx = np.cos(angles[i]) * (0.2 * stroke_len_mod)
     dy = np.sin(angles[i]) * (0.2 * stroke_len_mod)
     
-    # Işık yoğunluğuna göre fırçanın opaklığını anlık dalgalandır
-    brightness = max(0.3, min(1.0, light_intensity / 30000)) if system_health >= 75 else 1.0
+    segments.append([(x[i], y[i]), (x[i]+dx, y[i]+dy)])
+    line_colors.append(colors[i])
     
-    ax.plot([x[i], x[i]+dx], [y[i], y[i]+dy], 
-            c=colors[i], 
-            alpha=line_alpha * brightness, 
-            linewidth=1.5 + (kaos_factor * 0.15)) # Çizgiler biraz kalınlaştırıldı
+    brightness = max(0.3, min(1.0, light_intensity / 30000)) if system_health >= 75 else 1.0
+    alphas.append(line_alpha * brightness)
 
+lc = LineCollection(segments, colors=line_colors, linewidths=1.5 + (kaos_factor * 0.15))
+lc.set_alpha(alphas)
+ax.add_collection(lc)
+
+ax.autoscale()
 ax.axis('off')
 
 # --- 🖥️ DASHBOARD VE EKRAN TASARIMI ---
@@ -115,7 +122,7 @@ with col1:
               delta=f"-{int(st.session_state.prior_damage)} Birikmiş Geçmiş Hasar Etkisi", delta_color="inverse")
     
     st.write("---")
-    st.write("#### Ekosistem hafızası ve Stres Faktörleri:")
+    st.write("#### 🧠 Ekosistem Hafızası ve Stres Faktörleri:")
     st.progress(min(100, int(temp_penalty * 2)), text=f"🌡️ Termal Stres (Eksponansiyel): {int(temp_penalty)} Pts")
     st.progress(min(100, int(drought_penalty * 2)), text=f"💧 Kümülatif Kuraklık Hasarı: {int(drought_penalty)} Pts")
     st.progress(min(100, int(light_penalty * 2)), text=f"☀️ Işık/Fotosentez Dengesi: {int(light_penalty)} Pts")
@@ -131,3 +138,9 @@ with col1:
 
 • **Kaynak Optimizasyonu:** Ön plandaki bu estetik prestijin arkasında, tarla verimini artıran ve kaynakları optimize eden hassas bir analiz motoru çalışır[cite: 20, 21]."""
     )
+
+# İŞTE BURASI EKSİKTİ - TUVALİ SAĞ SÜTUNA ÇİZEN BLOK
+with col2:
+    st.subheader("🎨 Dijital Tuval (Verinin Sanata Dönüşümü)") [cite: 5, 20]
+    st.pyplot(fig)
+    plt.close(fig)
